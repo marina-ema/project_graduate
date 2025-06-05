@@ -1,0 +1,68 @@
+name: flutter_application_1
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  json_annotation: ^4.0.0
+  provider: ^6.1.2
+  shared_preferences: ^2.2.2
+  easy_localization: ^3.0.0
+  cupertino_icons: ^1.0.8
+  flick_video_player: ^0.9.0
+  image_picker: ^1.1.2
+  firebase_core: ^2.32.0
+  firebase_auth: ^4.17.4
+  cloud_firestore: ^4.17.5
+  geolocator: ^11.0.0
+  latlong2: ^0.8.0
+  url_launcher: ^6.1.7
+  http: ^1.2.0
+  geocoding: ^4.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - C:/Users/CS/Desktop/flutter_application_1/lib/translations/ar.json
+    - C:/Users/CS/Desktop/flutter_application_1/lib/translations/en.json
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/f.jpg
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/t.jpg
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/download (1).png
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/arabic.png
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/downlo.png
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/down.png
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/downloa.png
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/2.3.jpg
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/2.webp
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/35.webp
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/4.jpg
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/5.webp
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/5.PNG
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/7.PNG
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/Ba.PNG
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/aa.jpg
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/Ba.jpg
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/AA.jpg
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/6.PNG
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/loadingbark.png
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/sick.png
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/health.jpg
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/healthbark.png
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/upload.jpg
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/Uploadbark.png
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/icon1 (1).png
+    - C:/Users/CS/Desktop/flutter_application_1/lib/Image/icon1 (2).png

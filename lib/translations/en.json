@@ -1,0 +1,117 @@
+{
+  "menu": "Menu",
+  "home": "Home",
+  "about": "About",
+  "loading_page": "Loading Page",
+  "skin_disease": "Skin Disease",
+  "health": "Health",
+  "create_account": "Create an Account",
+  "dark": "Dark",
+  "light": "Light",
+  "change_language": "Change Language",
+ 
+
+  "login_your_account": "Login Your Account",
+  "email": "Email",
+  "sign_up": "Sign Up",
+  "Register Your Account": "Register Your Account",
+  "User Name": "User Name",
+  "Confirm Password": "Confirm Password",
+
+  "Prevention": "Prevention",
+  "Symptoms": "Symptoms",
+  "Causes": "Causes",
+  "password": "Password",
+  "login": "Login",
+  "dont_have_account": "Don’t have an account?",
+  "no_account": "Don't have an account?",
+  "please_enter_username": "Please enter your username",
+
+
+  "skin_diseases_title": "Skin Diseases",
+  "search_hint": "Search...",
+"cellulitis_name": "Cellulitis",
+  "impetigo_name": "Impetigo",
+  "athletesfoot_name": "Athlete's Foot",
+  "fungalnail_name": "Nail Fungus",
+  "ringworm_name": "Ringworm",
+  "cutaneouslarva_name": "Cutaneous Larva Migrans",
+  "chickenpox_name": "Chickenpox",
+  "shingles_name": "Shingles",
+
+  "success_title": "Successfully",
+  "success_message": "Page has been loaded successfully.",
+  "show_result": "Show Result",
+  "percent_sign": "%",
+  "user-not-found":"No user found for that email.",
+
+  "healthy_message": "You are healthy. 😊",
+  "sick_message": "You might need to see a doctor. 😟",
+  "back_button": "Back",
+  "find_doctor_button": "Find Nearest Doctor",
+
+  "upload_photo": "Upload Photo",
+  "take_picture": "Take a Picture",
+  "choose_from_gallery": "Choose from Gallery",
+
+
+    "register_your_account": "Register Your Account",
+    "user_name": "User Name",
+    "date_of_birth": "Date of Birth",
+    "confirm_password": "Confirm Password",
+    "select_gender": "Select your gender:",
+    "male": "Male",
+    "female": "Female",
+    "select_gender_error": "Please select your gender.",
+    "already_have_account": "Already have an account?",
+    "registered_successfully": "Registered Successfully",
+   "please_enter_date_of_birth": "Please enter your date of birth",
+   "please_enter_password": "Please enter your password",
+   "please_enter_confirm_password": "Please confirm your password",
+  "please_enter_email": "please_enter_email",
+  "weak-password":"weak-password",
+  "email-already-in-use": "email-already-in-use",
+"read_more":"read_more",
+  "cellulitis_description": "Cellulitis is a bacterial infection of the skin and the tissues underneath. It can cause redness, swelling, and pain in the affected area.",
+  "cellulitis_symptoms": "- Redness and swelling: The affected area becomes inflamed.\n- Pain: Painful to the touch.\n- Fever: May occur along with the infection.\n- Warmth: The infected area may feel warm.",
+  "cellulitis_causes": "- Bacterial infection: Often caused by Streptococcus or Staphylococcus bacteria.\n- Skin injuries: Cuts, wounds, or insect bites.\n- Weakened immune system: Makes one more prone to infections.",
+  "cellulitis_prevention": "Properly cleaning wounds, moisturizing dry skin to prevent cracks, and wearing protective gear to avoid injuries.",
+  
+
+
+  "impetigo_description": "Impetigo is a common and highly contagious bacterial skin infection, primarily caused by two types of bacteria: Staphylococcus aureus and Streptococcus pyogenes.",
+  "impetigo_symptoms": "- Lesions: Red sores or blisters that burst and form honey-colored crusts.\n- Itching: The affected areas are itchy.\n- Swollen lymph nodes: Sometimes swollen lymph nodes may occur.",
+  "impetigo_causes": "- Bacterial infection (mainly Staphylococcus aureus or Streptococcus pyogenes).\n- Highly contagious: Spread easily through skin contact.",
+  "impetigo_prevention": "Keeping skin clean and dry, avoiding sharing personal items like towels, and covering infected areas.",
+
+  "athletesfoot_description": "Athlete's foot is a fungal infection that commonly affects the feet. It causes itching, burning, and peeling of the skin.",
+  "athletes_foot_symptoms": "- Itching, burning, and stinging between the toes.\n- Peeling and cracking skin.\n- Blisters sometimes.",
+  "athletes_foot_causes": "- Fungal infection (commonly Tinea pedis).\n- Spread in moist environments like locker rooms and swimming pools.",
+  "athletes_foot_prevention": "Keeping feet clean and dry, wearing breathable footwear, and avoiding walking barefoot in public places.",
+
+  "nail_fungus_description": "Nail fungus is a fungal infection that affects the nails, causing them to become thickened, brittle, or discolored.",
+  "nail_fungus_symptoms": "- Thickened, brittle, or discolored nails.\n- Crumbling edges.\n- Slight foul smell sometimes.",
+  "nail_fungus_causes": "- Fungal infections (mostly dermatophytes).\n- Sometimes due to yeast or mold.",
+  "nail_fungus_prevention": "Keeping nails trimmed and clean, avoiding walking barefoot in damp areas, and using antifungal sprays if needed.",
+
+  "ringworm_description": "Ringworm is a fungal infection that causes ring-shaped, red, scaly patches on the skin.",
+  "ringworm_symptoms": "- Ring-shaped, red, scaly patches.\n- Itching.\n- Cracked skin sometimes.",
+  "ringworm_causes": "- Fungal infection (dermatophytes).\n- Spread by skin-to-skin contact or from contaminated surfaces.",
+  "ringworm_prevention": "Avoid sharing personal items, keeping skin clean and dry, and treating pets if infected.",
+
+  "cutaneouslarva_description": "Cutaneous Larva Migrans is a skin infection caused by hookworm larvae that penetrate the skin.",
+  "cutaneous_larva_migrans_symptoms": "- Red, winding, itchy rash.\n- Slight swelling.\n- Migration of the rash over days.",
+  "cutaneous_larva_migrans_causes": "- Hookworm larvae penetrating the skin from contaminated soil or sand.",
+  "cutaneous_larva_migrans_prevention": "Avoid walking barefoot on sand or soil and keep pets dewormed.",
+
+  "chickenpox_description": "Chickenpox is an infectious disease caused by the varicella-zoster virus, resulting in an itchy rash and blisters.",
+  "chickenpox_symptoms": "- Itchy, blister-like rash.\n- Fever.\n- Fatigue and loss of appetite.",
+  "chickenpox_causes": "- Infection with varicella-zoster virus.",
+  "chickenpox_prevention": "Vaccination and avoiding contact with infected individuals.",
+
+  "shingles_description": "Shingles is a viral infection that causes a painful rash, usually on one side of the body, and is caused by reactivation of the varicella-zoster virus.",
+  "shingles_symptoms": "- Painful rash, usually on one side of the body.\n- Burning or tingling sensation.\n- Blisters that scab over.",
+  "shingles_causes": "- Reactivation of varicella-zoster virus.",
+  "shingles_prevention": "Shingles vaccination and managing stress to maintain immune health.",
+  "Logout":"Logout"
+}

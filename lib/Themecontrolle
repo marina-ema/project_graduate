@@ -1,0 +1,7 @@
+import 'package:flutter/material.dart';
+
+class ThemeController {
+  // 💡 هنا بنخلي المتغير static علشان نقدر نوصله من أي مكان بسهولة
+  static final ValueNotifier<ThemeMode> themeNotifier =
+      ValueNotifier(ThemeMode.light);
+}
