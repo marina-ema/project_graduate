@@ -17,6 +17,8 @@ class _SelectGovernorateScreenState extends State<SelectGovernorateScreen> {
     'Assiut',
     'Cairo',
     'Alexandria',
+    'Giza',
+    'Sharqia',
   ];
 
   @override
