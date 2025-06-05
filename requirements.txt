@@ -1,6 +1,6 @@
 absl-py==2.2.2
 aiobotocore==2.5.2
-aiohappyeyeballs==1.2.3
+aiohappyeyeballs==1.2.0
 aiohttp==3.8.4
 aioitertools==0.11.0
 aiosignal==1.3.1
