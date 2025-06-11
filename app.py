@@ -5,32 +5,24 @@ import cv2
 import tensorflow as tf
 import os
 
-# إنشاء التطبيق وتفعيل CORS
 app = Flask(__name__)
 CORS(app)
 
-# تحميل النموذج
-model = tf.keras.models.load_model(r"C:/Users/CS/VGG16_skin_disease_model.keras")
+model = tf.keras.models.load_model(r"C:/Users/CS/efficientnet_skin_disease_model.keras")
 
-# أسماء الأمراض الجلدية
 classes = ['Cellulitis', 'Impetigo', 'Athlete-foot', 'Nail Fungus', 'Ringworm',
            'Cutaneous Larva Migrans', 'Chickenpox', 'Shingles']
 
-# دالة معالجة الصورة
 def preprocess(img):
     img = cv2.resize(img, (128, 128)) 
     img = img.astype('float32') / 255.0  
     return img
 
-# الصفحة الرئيسية
 @app.route('/')
 def home():
     return '''
-        <h2>خادم التشخيص يعمل بنجاح ✅</h2>
-        <p>استخدم <code>/predict</code> لإرسال صورة وتشخيص المرض الجلدي.</p>
-        <p>الطريقة: أرسل طلب POST مع صورة باستخدام المفتاح <code>image</code>.</p>
+        <h2>The diagnostic server is running successfully</h2>
     '''
-
 @app.route('/predict', methods=['POST'])
 def predict():
     if 'image' not in request.files:
@@ -49,7 +41,7 @@ def predict():
     predicted_index = np.argmax(pred)
     predicted_class = classes[predicted_index]
 
-    # إعداد النتيجة مع جميع الاحتمالات
+
     prediction_details = [
         {"disease": classes[i], "probability": float(pred[i])}
         for i in range(len(classes))
