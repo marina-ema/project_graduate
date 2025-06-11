@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'hospitals_screen.dart';
 
 class SelectGovernorateScreen extends StatefulWidget {
   const SelectGovernorateScreen({Key? key}) : super(key: key);
-
   @override
   State<SelectGovernorateScreen> createState() =>
       _SelectGovernorateScreenState();
@@ -11,7 +11,6 @@ class SelectGovernorateScreen extends StatefulWidget {
 
 class _SelectGovernorateScreenState extends State<SelectGovernorateScreen> {
   String? selectedGovernorate;
-
   final List<String> governorates = [
     'Sohag',
     'Assiut',
@@ -20,15 +19,18 @@ class _SelectGovernorateScreenState extends State<SelectGovernorateScreen> {
     'Giza',
     'Sharqia',
   ];
-
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    Color textColor = isDarkMode ? Colors.white : Colors.black;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 11, 170, 143),
+        backgroundColor: const Color.fromARGB(255, 11, 170, 143),
         title: Text(
-          'Select Governorate',
+          'select_governorate'.tr(),
+          style: TextStyle(color: textColor),
         ),
+        iconTheme: IconThemeData(color: textColor),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -36,11 +38,19 @@ class _SelectGovernorateScreenState extends State<SelectGovernorateScreen> {
           children: [
             DropdownButtonFormField<String>(
               value: selectedGovernorate,
-              hint: const Text('Select Governorate'),
+              hint: Text(
+                'select_governorate'.tr(),
+                style: TextStyle(color: textColor),
+              ),
+              dropdownColor:
+                  isDarkMode ? const Color(0xFF1E1E1E) : Colors.white,
               items: governorates.map((gov) {
                 return DropdownMenuItem(
                   value: gov,
-                  child: Text(gov),
+                  child: Text(
+                    'gov_$gov'.tr(),
+                    style: TextStyle(color: textColor),
+                  ),
                 );
               }).toList(),
               onChanged: (value) {
@@ -49,29 +59,34 @@ class _SelectGovernorateScreenState extends State<SelectGovernorateScreen> {
                 });
               },
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 100),
             ElevatedButton.icon(
-              icon: const Icon(Icons.local_hospital, color: Colors.black),
-              label: const Text(
-                'Hospitals Show',
-                style: TextStyle(color: Colors.black),
+              icon: Icon(
+                Icons.local_hospital,
+                color: textColor,
+              ),
+              label: Text(
+                'show_hospitals'.tr(),
+                style: TextStyle(color: textColor),
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 11, 170, 143),
+                backgroundColor: const Color.fromARGB(255, 11, 170, 143),
               ),
               onPressed: () {
                 if (selectedGovernorate != null) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) =>
-                          HospitalsScreen(governorate: selectedGovernorate!),
+                      builder: (_) => HospitalsScreen(
+                        governorate: selectedGovernorate!,
+                      ),
                     ),
                   );
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                        content: Text('Please select a governorate')),
+                    SnackBar(
+                      content: Text('please_select_governorate'.tr()),
+                    ),
                   );
                 }
               },
