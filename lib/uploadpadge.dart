@@ -1,15 +1,14 @@
 import 'dart:typed_data';
 import 'dart:io' as io show File;
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
-import 'loading.dart'; // تأكد من أن هذا الملف موجود
+import 'package:easy_localization/easy_localization.dart';
+import 'loading.dart';
 
 class upload extends StatefulWidget {
   const upload({Key? key}) : super(key: key);
-
   @override
   State<upload> createState() => _UploadPageState();
 }
@@ -19,7 +18,6 @@ class _UploadPageState extends State<upload> {
   XFile? _image;
   Uint8List? _webImage;
   bool _loading = false;
-
   Future<void> _pickImage(ImageSource source) async {
     final pickedFile = await _picker.pickImage(source: source);
     if (pickedFile != null) {
@@ -39,17 +37,14 @@ class _UploadPageState extends State<upload> {
 
   Future<void> _uploadImage() async {
     if (_image == null) return;
-
     setState(() {
       _loading = true;
     });
-
     try {
       var request = http.MultipartRequest(
         'POST',
-        Uri.parse('http://192.168.1.3:5000/predict'),
+        Uri.parse('http://192.168.1.5:5000/predict'),
       );
-
       if (kIsWeb) {
         request.files.add(http.MultipartFile.fromBytes(
           'image',
@@ -62,15 +57,11 @@ class _UploadPageState extends State<upload> {
           _image!.path,
         ));
       }
-
       var response = await request.send();
-
       if (!mounted) return;
-
       if (response.statusCode == 200) {
         final res = await http.Response.fromStream(response);
         final result = res.body;
-
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -79,13 +70,13 @@ class _UploadPageState extends State<upload> {
         );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('فشل في الإرسال')),
+          SnackBar(content: Text('upload_fail'.tr())),
         );
       }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('خطأ أثناء الإرسال: $e')),
+          SnackBar(content: Text('${'upload_error'.tr()} $e')),
         );
       }
     } finally {
@@ -99,6 +90,7 @@ class _UploadPageState extends State<upload> {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     Widget? imageWidget;
     if (_image != null) {
       if (kIsWeb && _webImage != null) {
@@ -108,10 +100,9 @@ class _UploadPageState extends State<upload> {
             Image.file(io.File(_image!.path), width: 250, height: 250);
       }
     }
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Upload Photo'),
+        title: Text('upload_photo'.tr()),
         backgroundColor: const Color.fromARGB(255, 11, 170, 143),
       ),
       body: Stack(
@@ -125,25 +116,29 @@ class _UploadPageState extends State<upload> {
                 children: [
                   ElevatedButton.icon(
                     onPressed: () => _pickImage(ImageSource.camera),
-                    icon: const Icon(Icons.camera_alt, color: Colors.black),
-                    label: const Text(
-                      'Take Photo',
-                      style: TextStyle(color: Colors.black),
+                    icon: Icon(Icons.camera_alt,
+                        color: isDarkMode ? Colors.white : Colors.black),
+                    label: Text(
+                      'take_photo'.tr(),
+                      style: TextStyle(
+                          color: isDarkMode ? Colors.white : Colors.black),
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 11, 170, 143),
+                      backgroundColor: const Color.fromARGB(255, 11, 170, 143),
                     ),
                   ),
                   const SizedBox(height: 10),
                   ElevatedButton.icon(
                     onPressed: () => _pickImage(ImageSource.gallery),
-                    icon: const Icon(Icons.photo, color: Colors.black),
-                    label: const Text(
-                      'Choose from Gallery',
-                      style: TextStyle(color: Colors.black),
+                    icon: Icon(Icons.photo,
+                        color: isDarkMode ? Colors.white : Colors.black),
+                    label: Text(
+                      'choose_gallery'.tr(),
+                      style: TextStyle(
+                          color: isDarkMode ? Colors.white : Colors.black),
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 11, 170, 143),
+                      backgroundColor: const Color.fromARGB(255, 11, 170, 143),
                     ),
                   ),
                 ],
@@ -157,23 +152,29 @@ class _UploadPageState extends State<upload> {
               children: [
                 FloatingActionButton(
                   heroTag: "camera",
-                  backgroundColor: Color.fromARGB(255, 11, 170, 143),
-                  child: const Icon(Icons.camera_alt, color: Colors.white),
+                  backgroundColor: const Color.fromARGB(255, 11, 170, 143),
+                  child: Icon(Icons.camera_alt,
+                      color: isDarkMode ? Colors.white : Colors.black),
                   onPressed: () => _pickImage(ImageSource.camera),
                 ),
                 const SizedBox(height: 10),
                 FloatingActionButton(
                   heroTag: "gallery",
-                  backgroundColor: Color.fromARGB(255, 11, 170, 143),
-                  child: const Icon(Icons.photo, color: Colors.white),
+                  backgroundColor: const Color.fromARGB(255, 11, 170, 143),
+                  child: Icon(Icons.photo,
+                      color: isDarkMode ? Colors.white : Colors.black),
                   onPressed: () => _pickImage(ImageSource.gallery),
                 ),
                 const SizedBox(height: 10),
                 FloatingActionButton.extended(
-                  backgroundColor: Color.fromARGB(255, 11, 170, 143),
-                  label: const Text('Image analysis',
-                      style: TextStyle(color: Colors.white)), // لون النص أبيض
-                  icon: const Icon(Icons.send, color: Colors.white),
+                  backgroundColor: const Color.fromARGB(255, 11, 170, 143),
+                  label: Text(
+                    'image_analysis'.tr(),
+                    style: TextStyle(
+                        color: isDarkMode ? Colors.white : Colors.black),
+                  ),
+                  icon: Icon(Icons.send,
+                      color: isDarkMode ? Colors.white : Colors.black),
                   onPressed: _uploadImage,
                 ),
               ],
